@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+  <fieldset
+        name="help"
+        label="JHELP"
+        addfieldpath="/plugins/system/adminhelp/fields"
+    >
+        <field
+            name="help"
+            type="helparticle"
+            article_id=""
+            hiddenLabel="true"
+            class="form-vertical"
+        />
+    </fieldset>
+</form>
