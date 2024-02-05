@@ -75,14 +75,15 @@ class AdminHelp extends CMSPlugin implements SubscriberInterface
      *
      * @since   <your version>
      */
-    public function onContentPrepareForm(Event $event) {
+    public function onContentPrepareForm(Event $event): void
+    {
         $args    = $event->getArguments();
         $form    = $args[0];
         $data    = $args[1];
 
         if (!($form instanceof \Joomla\CMS\Form\Form)) {
             throw new GenericDataException(Text::_('JERROR_NOT_A_FORM'), 500);
-            return false;
+            return;
         }
 
         #$app    = Factory::getApplication();
@@ -122,7 +123,7 @@ class AdminHelp extends CMSPlugin implements SubscriberInterface
 
         // If there's no cat_id we're done:
         if (empty($cat_id)) {
-            return true;
+            return;
         }
 
         // Next, look for an article:
@@ -138,7 +139,7 @@ class AdminHelp extends CMSPlugin implements SubscriberInterface
 
         // If there's no article_id we're done:
         if (empty($article_id)) {
-            return true;
+            return;
         }
 
         // Add the extra fields to the form.
@@ -150,6 +151,6 @@ class AdminHelp extends CMSPlugin implements SubscriberInterface
 
         // Set the article id on the field:
         $form->setFieldAttribute('help', 'article_id', $article_id);
-        return true;
+        return;
     }
 }
