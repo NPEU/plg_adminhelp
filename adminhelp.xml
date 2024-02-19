@@ -21,10 +21,10 @@
 
     <namespace path="src">NPEU\Plugin\System\AdminHelp</namespace>
     <files>
-        <folder>services</folder>
         <folder plugin="adminhelp">src</folder>
         <folder>forms</folder>
         <folder>language</folder>
+        <folder>services</folder>
     </files>
 
     <config>

@@ -142,11 +142,9 @@ class AdminHelp extends CMSPlugin implements SubscriberInterface
             return;
         }
 
-        // Add the extra fields to the form.
-        $plg_dir = dirname(dirname(dirname(__FILE__)));
-        #echo "<pre>\n"; var_dump($plg_dir); echo "</pre>\n";exit;
+        // Add the extra fields to the form.        #echo "<pre>\n"; var_dump($plg_dir); echo "</pre>\n";exit;
         FormHelper::addFieldPrefix('NPEU\\Plugin\\System\\AdminHelp\\Field');
-        FormHelper::addFormPath($plg_dir . '/forms');
+        FormHelper::addFormPath(dirname(dirname(__DIR__)) . '/forms');
         $form->loadFile('helparticleform', false);
 
         // Set the article id on the field:
