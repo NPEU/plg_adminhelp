@@ -13,6 +13,8 @@ defined('_JEXEC') or die;
 
 use Joomla\CMS\Factory;
 use Joomla\CMS\Form\FormHelper;
+use Joomla\CMS\Language\Text;
+use Joomla\CMS\MVC\View\GenericDataException;
 use Joomla\CMS\Plugin\CMSPlugin;
 use Joomla\Event\Event;
 use Joomla\Event\SubscriberInterface;
@@ -81,8 +83,7 @@ class AdminHelp extends CMSPlugin implements SubscriberInterface
         $form    = $args[0];
         $data    = $args[1];
 
-        if (!($form instanceof \Joomla\CMS\Form\Form)) {
-            throw new GenericDataException(Text::_('JERROR_NOT_A_FORM'), 500);
+        if (!$form instanceof \Joomla\CMS\Form\Form) {
             return;
         }
 
