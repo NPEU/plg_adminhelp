@@ -79,9 +79,7 @@ class AdminHelp extends CMSPlugin implements SubscriberInterface
      */
     public function onContentPrepareForm(Event $event): void
     {
-        $args    = $event->getArguments();
-        $form    = $args[0];
-        $data    = $args[1];
+        [$form, $data] = array_values($event->getArguments());
 
         if (!$form instanceof \Joomla\CMS\Form\Form) {
             return;
